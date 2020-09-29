@@ -10,8 +10,13 @@
     { description: 'sleep', id: uuid() }
   ]
   const onAdd = () => {
-    routinelist = routinelist.concat({ description: editedRoutine, id: uuid() })
+    if (editedRoutine.length > 0) {
+      routinelist = routinelist.concat({
+        description: editedRoutine,
+        id: uuid()
+      })
     editedRoutine = ''
+  }
   }
   const onEdit = () => {
     editMode = !editMode
