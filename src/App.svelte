@@ -1,5 +1,6 @@
 <script>
   import { v4 as uuid } from 'uuid'
+  import Routine from './Routine.svelte'
 
   let editMode = false
 
@@ -26,17 +27,7 @@
     <div class="col">
       <h1>routines</h1>
       {#each routinelist as routine}
-        <div class="card mb-1">
-          <div class="card-body">
-            {#if editMode}
-              <button
-                type="button"
-                class="btn btn-info"
-                on:click={onRemove(routine.id)}>-</button>
-            {/if}
-            {routine.description}
-          </div>
-        </div>
+        <Routine {editMode} {routine} {onRemove} />
       {/each}
       <button on:click={onEdit}>edit</button>
     </div>
