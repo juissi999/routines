@@ -30,17 +30,29 @@
   <div class="row">
     <div class="col">
       <h1>routines</h1>
-      {#each routinelist as routine}
-        <Routine {editMode} {routine} {onRemove} />
+      {#each routinelist as routine, index}
+        <Routine
+          {editMode}
+          {routine}
+          {onRemove}
+          bgClass={index % 2 ? 'bg-info' : 'bg-secondary'} />
       {/each}
       {#if editMode}
         <input
           type="text"
           placeholder="Routine description"
           bind:value={editedRoutine} />
-        <button on:click={onAdd}>add</button>
+        <button
+          type="button"
+          class="btn btn-success"
+          on:click={onAdd}>add</button>
       {/if}
-      <button on:click={onEdit}>edit</button>
+      <div>
+        <button
+          type="button"
+          class="btn btn-warning"
+          on:click={onEdit}>edit</button>
+      </div>
     </div>
   </div>
 </div>
