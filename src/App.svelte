@@ -1,9 +1,13 @@
 <script>
+  import { onMount } from 'svelte'
   import { v4 as uuid } from 'uuid'
+
   import Routine from './Routine.svelte'
 
+  const storageKey = 'routines'
   let editMode = false
   let editedRoutine = ''
+  let routinelist = []
 
   const bgClasses = [
     'bg-info',
@@ -14,10 +18,10 @@
     'bg-warning'
   ]
 
-  let routinelist = [
-    { description: 'eat', id: uuid() },
-    { description: 'sleep', id: uuid() }
-  ]
+  const updated = () => {
+    localStorage.setItem(storageKey, JSON.stringify(routinelist, null, 2))
+  }
+
   const onAdd = () => {
     if (editedRoutine.length > 0) {
       routinelist = routinelist.concat({
@@ -26,13 +30,26 @@
       })
       editedRoutine = ''
     }
+    updated()
   }
   const onEdit = () => {
     editMode = !editMode
   }
   const onRemove = (id) => {
     routinelist = routinelist.filter((li) => li.id !== id)
+    updated()
   }
+  onMount(() => {
+    const initial = [
+      { description: 'eat', id: uuid() },
+      { description: 'sleep', id: uuid() }
+    ]
+
+    if (localStorage.getItem(storageKey) === null) {
+      localStorage.setItem(storageKey, JSON.stringify(initial, null, 2))
+    }
+    routinelist = JSON.parse(localStorage.getItem(storageKey))
+  })
 </script>
 
 <svelte:head>
