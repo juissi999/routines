@@ -3,12 +3,16 @@
   import Routine from './Routine.svelte'
 
   let editMode = false
+  let editedRoutine = ''
 
   let routinelist = [
     { description: 'eat', id: uuid() },
     { description: 'sleep', id: uuid() }
   ]
-  const onAdd = () => {}
+  const onAdd = () => {
+    routinelist = routinelist.concat({ description: editedRoutine, id: uuid() })
+    editedRoutine = ''
+  }
   const onEdit = () => {
     editMode = !editMode
   }
@@ -29,6 +33,13 @@
       {#each routinelist as routine}
         <Routine {editMode} {routine} {onRemove} />
       {/each}
+      {#if editMode}
+        <input
+          type="text"
+          placeholder="Routine description"
+          bind:value={editedRoutine} />
+        <button on:click={onAdd}>add</button>
+      {/if}
       <button on:click={onEdit}>edit</button>
     </div>
   </div>
