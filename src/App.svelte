@@ -5,6 +5,15 @@
   let editMode = false
   let editedRoutine = ''
 
+  const bgClasses = [
+    'bg-info',
+    'bg-secondary',
+    'bg-success',
+    'bg-primary',
+    'bg-dark',
+    'bg-warning'
+  ]
+
   let routinelist = [
     { description: 'eat', id: uuid() },
     { description: 'sleep', id: uuid() }
@@ -15,8 +24,8 @@
         description: editedRoutine,
         id: uuid()
       })
-    editedRoutine = ''
-  }
+      editedRoutine = ''
+    }
   }
   const onEdit = () => {
     editMode = !editMode
@@ -44,11 +53,11 @@
           {editMode}
           {routine}
           {onRemove}
-          bgClass={index % 2 ? 'bg-info' : 'bg-secondary'} />
+          bgClass={bgClasses[index % bgClasses.length]} />
       {/each}
     </div>
   </div>
-      {#if editMode}
+  {#if editMode}
     <div class="row my-1">
       <div class="col-8 col-sm-10 col-md-10 col-lg-10 col-xl-11">
         <input
@@ -64,14 +73,13 @@
           on:click={onAdd}>add</button>
       </div>
     </div>
-      {/if}
+  {/if}
   <div class="row">
     <div class="col">
-        <button
-          type="button"
-          class="btn btn-warning"
-          on:click={onEdit}>edit</button>
-      </div>
+      <button
+        type="button"
+        class="btn btn-warning"
+        on:click={onEdit}>edit</button>
     </div>
   </div>
 </div>
