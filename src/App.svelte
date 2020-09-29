@@ -29,7 +29,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1>routines</h1>
+      <h1 class="text-white">routines</h1>
       {#each routinelist as routine, index}
         <Routine
           {editMode}
