@@ -12,10 +12,10 @@
 
   const bgClasses = [
     'bg-info',
-    'bg-secondary',
+    'bg-dark',
     'bg-success',
     'bg-primary',
-    'bg-dark',
+    'bg-secondary',
     'bg-warning'
   ]
 
@@ -34,6 +34,7 @@
         id: uuid()
       })
       editedRoutine = ''
+      editMode = false
     }
     updated()
   }
