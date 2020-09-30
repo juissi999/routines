@@ -1,13 +1,14 @@
 <script>
   import { onMount } from 'svelte'
   import { v4 as uuid } from 'uuid'
+  import { dndzone } from 'svelte-dnd-action'
 
   import Routine from './Routine.svelte'
 
   const storageKey = 'routines'
   let editMode = false
   let editedRoutine = ''
-  let routinelist = []
+  let routines = []
 
   const bgClasses = [
     'bg-info',
@@ -19,12 +20,16 @@
   ]
 
   const updated = () => {
-    localStorage.setItem(storageKey, JSON.stringify(routinelist, null, 2))
+    localStorage.setItem(storageKey, JSON.stringify(routines, null, 2))
+  }
+
+  const handleSort = (e) => {
+    routines = e.detail.items
   }
 
   const onAdd = () => {
     if (editedRoutine.length > 0) {
-      routinelist = routinelist.concat({
+      routines = routines.concat({
         description: editedRoutine,
         id: uuid()
       })
@@ -36,7 +41,7 @@
     editMode = !editMode
   }
   const onRemove = (id) => {
-    routinelist = routinelist.filter((li) => li.id !== id)
+    routines = routines.filter((li) => li.id !== id)
     updated()
   }
   onMount(() => {
@@ -48,7 +53,7 @@
     if (localStorage.getItem(storageKey) === null) {
       localStorage.setItem(storageKey, JSON.stringify(initial, null, 2))
     }
-    routinelist = JSON.parse(localStorage.getItem(storageKey))
+    routines = JSON.parse(localStorage.getItem(storageKey))
   })
 </script>
 
@@ -65,13 +70,28 @@
   </div>
   <div class="row">
     <div class="col">
-      {#each routinelist as routine, index}
-        <Routine
-          {editMode}
-          {routine}
-          {onRemove}
-          bgClass={bgClasses[index % bgClasses.length]} />
-      {/each}
+      {#if editMode}
+        <section
+          use:dndzone={{ items: routines }}
+          on:consider={handleSort}
+          on:finalize={handleSort}>
+          {#each routines as routine, index (routine.id)}
+            <Routine
+              {editMode}
+              {routine}
+              {onRemove}
+              bgClass={bgClasses[index % bgClasses.length]} />
+          {/each}
+        </section>
+      {:else}
+        {#each routines as routine, index (routine.id)}
+          <Routine
+            {editMode}
+            {routine}
+            {onRemove}
+            bgClass={bgClasses[index % bgClasses.length]} />
+        {/each}
+      {/if}
     </div>
   </div>
   {#if editMode}
