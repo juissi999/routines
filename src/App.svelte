@@ -31,6 +31,7 @@
 
   const handleSort = (e) => {
     routines = e.detail.items
+    updated()
   }
 
   const onAdd = () => {
@@ -44,13 +45,16 @@
     }
     updated()
   }
+
   const onEdit = () => {
     editMode = !editMode
   }
+
   const onRemove = (id) => {
     routines = routines.filter((li) => li.id !== id)
     updated()
   }
+
   onMount(() => {
     const initial = [
       { description: 'eat', id: uuid() },
