@@ -6,7 +6,7 @@
 </script>
 
 <div class={'card mb-1 ' + bgClass}>
-  <div class="card-body text-white" style="font-size:18px">
+  <div class="card-body " style="font-size:20px">
     {routine.description}
     {#if editMode}
       <button

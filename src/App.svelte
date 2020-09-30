@@ -11,12 +11,18 @@
   let routines = []
 
   const bgClasses = [
-    'bg-info',
-    'bg-dark',
-    'bg-success',
-    'bg-primary',
-    'bg-secondary',
-    'bg-warning'
+    // 'bg-info',
+    // 'bg-dark',
+    // 'bg-success',
+    // 'bg-primary',
+    // 'bg-secondary',
+    // 'bg-warning',
+    'color-1',
+    'color-6',
+    'color-3',
+    'color-4',
+    'color-2',
+    'color-5'
   ]
 
   const updated = () => {
