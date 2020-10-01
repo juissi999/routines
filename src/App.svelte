@@ -92,10 +92,17 @@
     <div class="col">
       <h1 class="text-white">
         routines
-        <button
-          type="button"
-          class={editMode ? 'btn btn-warning' : 'btn btn-outline-warning'}
-          on:click={onEdit}>edit</button>
+        {#if editMode}
+          <button
+            type="button"
+            class="btn btn-warning"
+            on:click={onEdit}>edit</button>
+        {:else}
+          <button
+            type="button"
+            class="btn btn-outline-warning"
+            on:click={onEdit}>edit</button>
+        {/if}
       </h1>
     </div>
   </div>

@@ -2,6 +2,10 @@
   background-color: #201c29;
 }
 
+.right{
+  float:right;
+}
+
 .text-1 {
   font-family: 'Times New Roman', Times, serif;
   font-size: 25px;

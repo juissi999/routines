@@ -18,7 +18,7 @@
     {#if editMode}
       <button
         type="button"
-        class="btn btn-danger btn-sm ml-1"
+        class="btn btn-danger btn-sm ml-1 right"
         on:click={onRemove(routine.id)}>-</button>
     {/if}
   </div>
