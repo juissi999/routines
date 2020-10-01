@@ -35,11 +35,14 @@
   }
 
   const onAdd = () => {
+    // add new routine to the beginning of the list
     if (editedRoutine.length > 0) {
-      routines = routines.concat({
-        description: editedRoutine,
-        id: uuid()
-      })
+      routines = [
+        {
+          description: editedRoutine,
+          id: uuid()
+        }
+      ].concat(routines)
       editedRoutine = ''
       editMode = false
     }
