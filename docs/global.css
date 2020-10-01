@@ -2,21 +2,54 @@
   background-color: #201c29;
 }
 
-.color-1 {
-  background-color: #ff9aa2 !important;
+.text-1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 25px;
 }
-.color-2 {
-  background-color: #ffb7b2 !important;
+
+.text-2 {
+  font-family: 'Arial Black', Gadget, sans-serif;
 }
-.color-3 {
-  background-color: #ffdac1 !important;
+
+.text-3 {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 }
-.color-4 {
-  background-color: #b5ead7 !important;
+
+.text-4 {
+  font-family: Impact, Charcoal, sans-serif;
 }
-.color-5 {
-  background-color: #779ecb !important;
+
+.text-5 {
+  font-family: 'Courier New', Courier, monospace;
 }
-.color-6 {
-  background-color: #c7ceea !important;
+
+.text-6 {
+  font-family: 'Lucida Console', Monaco, monospace;
+}
+
+.text-7 {
+  font-family: 'Lucida Console', Monaco, monospace;
+}
+
+.bg-1 {
+  background-color: #9b92be !important;
+  color: black;
+}
+.bg-2 {
+  background-color: #9cdd77 !important;
+}
+.bg-3 {
+  background-color: #97baeb !important;
+}
+.bg-4 {
+  background-color: #fc6868 !important;
+  color: white;
+}
+.bg-5 {
+  background-color: #eee9a0 !important;
+  color: black;
+}
+.bg-6 {
+  background-color: #0b9c48 !important;
+  color: white;
 }

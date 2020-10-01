@@ -17,12 +17,12 @@
     // 'bg-primary',
     // 'bg-secondary',
     // 'bg-warning',
-    'color-1',
-    'color-6',
-    'color-3',
-    'color-4',
-    'color-2',
-    'color-5'
+    'bg-1',
+    'bg-2',
+    'bg-3',
+    'bg-4',
+    'bg-5',
+    'bg-6'
   ]
 
   const updated = () => {
