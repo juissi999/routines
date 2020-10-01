@@ -58,6 +58,22 @@
     updated()
   }
 
+  const onUp = (id) => {
+    // find the index of the routine to be shifted
+    const index = routines.findIndex((r) => r.id === id)
+
+    if (index > 0) {
+      // get the object of the to-shift routine
+      const removedRoutine = routines[index]
+
+      // remove the to-shift routine
+      routines = routines.filter((r) => r.id !== id)
+
+      // add the routine again to one spot above on the array
+      routines.splice(index - 1, 0, removedRoutine)
+    }
+  }
+
   onMount(() => {
     const initial = [
       { description: 'eat', id: uuid() },
@@ -107,28 +123,14 @@
   {/if}
   <div class="row">
     <div class="col">
-      {#if editMode}
-        <section
-          use:dndzone={{ items: routines }}
-          on:consider={handleSort}
-          on:finalize={handleSort}>
-          {#each routines as routine, index (routine.id)}
-            <Routine
-              {editMode}
-              {routine}
-              {onRemove}
-              bgClass={bgClasses[index % bgClasses.length]} />
-          {/each}
-        </section>
-      {:else}
-        {#each routines as routine, index (routine.id)}
-          <Routine
-            {editMode}
-            {routine}
-            {onRemove}
-            bgClass={bgClasses[index % bgClasses.length]} />
-        {/each}
-      {/if}
+      {#each routines as routine, index (routine.id)}
+        <Routine
+          {editMode}
+          {routine}
+          {onRemove}
+          {onUp}
+          bgClass={bgClasses[index % bgClasses.length]} />
+      {/each}
     </div>
   </div>
 </div>
