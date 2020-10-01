@@ -95,7 +95,7 @@
         routines
         <button
           type="button"
-          class="btn btn-warning"
+          class={editMode ? 'btn btn-warning' : 'btn btn-outline-warning'}
           on:click={onEdit}>edit</button>
       </h1>
     </div>
