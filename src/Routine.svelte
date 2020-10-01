@@ -8,12 +8,14 @@
 
 <div class={'card mb-1 ' + bgClass}>
   <div class="card-body " style="font-size:20px">
-    {routine.description}
     {#if editMode}
       <button
         type="button"
         class="btn btn-success btn-sm ml-1"
         on:click={onUp(routine.id)}>up</button>
+    {/if}
+    {routine.description}
+    {#if editMode}
       <button
         type="button"
         class="btn btn-danger btn-sm ml-1"
