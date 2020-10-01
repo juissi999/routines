@@ -29,11 +29,6 @@
     localStorage.setItem(storageKey, JSON.stringify(routines, null, 2))
   }
 
-  const handleSort = (e) => {
-    routines = e.detail.items
-    updated()
-  }
-
   const onAdd = () => {
     // add new routine to the beginning of the list
     if (editedRoutine.length > 0) {
@@ -71,6 +66,7 @@
 
       // add the routine again to one spot above on the array
       routines.splice(index - 1, 0, removedRoutine)
+      updated()
     }
   }
 
