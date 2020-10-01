@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "sirv-cli": "^1.0.0",
-    "svelte-dnd-action": "^0.5.3",
     "uuid": "^8.3.0"
   }
 }

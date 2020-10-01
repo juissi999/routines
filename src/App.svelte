@@ -1,7 +1,6 @@
 <script>
   import { onMount } from 'svelte'
   import { v4 as uuid } from 'uuid'
-  import { dndzone } from 'svelte-dnd-action'
 
   import Routine from './Routine.svelte'
 
