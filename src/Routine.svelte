@@ -11,7 +11,7 @@
     {#if editMode}
       <button
         type="button"
-        class="btn btn-success btn-sm ml-1"
+        class="btn btn-secondary btn-sm ml-1"
         on:click={onUp(routine.id)}>up</button>
     {/if}
     {routine.description}
@@ -19,7 +19,7 @@
       <button
         type="button"
         class="btn btn-danger btn-sm ml-1 right"
-        on:click={onRemove(routine.id)}>-</button>
+        on:click={onRemove(routine.id)}>x</button>
     {/if}
   </div>
 </div>
