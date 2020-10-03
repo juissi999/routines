@@ -25,7 +25,12 @@
   ]
 
   const updated = () => {
-    localStorage.setItem(storageKey, JSON.stringify(routines, null, 2))
+    if (routines.length > 0) {
+      localStorage.setItem(storageKey, JSON.stringify(routines, null, 2))
+    } else {
+      // if user deletes all routines, delete local storage object
+      localStorage.removeItem(storageKey)
+    }
   }
 
   const onAdd = () => {
