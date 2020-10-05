@@ -1,0 +1,16 @@
+{
+  "short_name": "Routines",
+  "name": "Routines",
+  "description": "Store and display things you need often",
+  "icons": [
+    {
+      "src": "android-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "",
+  "background_color": "#201c29",
+  "display": "standalone",
+  "scope": ""
+}
