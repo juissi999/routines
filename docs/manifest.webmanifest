@@ -1,6 +1,5 @@
 {
-  "short_name": "Routines",
-  "name": "Routines",
+  "name": "routines",
   "description": "Store and display things you need often",
   "icons": [
     {
@@ -9,8 +8,8 @@
       "type": "image/png"
     }
   ],
-  "start_url": "",
+  "start_url": "/",
   "background_color": "#201c29",
   "display": "standalone",
-  "scope": ""
+  "scope": "/"
 }
