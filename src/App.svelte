@@ -58,6 +58,14 @@
     updated()
   }
 
+  const onInputClick = (e) => {
+    // listen to keypresses on new input and if the user presses enter
+    // commit Add new routine
+    if (e.key === 'Enter') {
+      onAdd()
+    }
+  }
+
   const onUp = (id) => {
     // find the index of the routine to be shifted
     const index = routines.findIndex((r) => r.id === id)
@@ -121,6 +129,7 @@
           class="form-control"
           type="text"
           placeholder="New"
+          on:keypress={onInputClick}
           bind:value={editedRoutine} />
       </div>
       <div class="col">
