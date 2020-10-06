@@ -49,6 +49,7 @@
   }
 
   const onEdit = () => {
+    editedRoutine = ''
     editMode = !editMode
   }
 
@@ -119,7 +120,7 @@
         <input
           class="form-control"
           type="text"
-          placeholder="Routine description"
+          placeholder="New"
           bind:value={editedRoutine} />
       </div>
       <div class="col">
