@@ -4,6 +4,7 @@
 
   import Routine from './Routine.svelte'
   import NewForm from './NewForm.svelte'
+  import themes from './themes.json'
 
   const storageKey = 'routines'
   const themeStorageKey = 'theme'
@@ -12,24 +13,6 @@
   let currentTheme = 0
   let routines = []
   let cardClasses = []
-
-  const themes = {
-    pastel: [
-      'card-pastel-1',
-      'card-pastel-2',
-      'card-pastel-3',
-      'card-pastel-4',
-      'card-pastel-5',
-      'card-pastel-6'
-    ],
-    neon: [
-      'card-neon-1',
-      'card-neon-2',
-      'card-neon-3',
-      'card-neon-4',
-      'card-neon-5'
-    ]
-  }
 
   // initialize theme
   const themeNames = Object.keys(themes)
