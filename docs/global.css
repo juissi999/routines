@@ -21,32 +21,41 @@
 }
 
 .text-1 {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 25px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-size: 23px;
+  color: #fff403;
 }
 
 .text-2 {
   font-family: 'Arial Black', Gadget, sans-serif;
+  color: #aa00ff;
 }
 
 .text-3 {
   font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #ffaa00;
 }
 
 .text-4 {
   font-family: Impact, Charcoal, sans-serif;
+  color: #ff00aa;
 }
 
 .text-5 {
   font-family: 'Courier New', Courier, monospace;
+  color: #aaff00;
 }
 
 .text-6 {
-  font-family: 'Lucida Console', Monaco, monospace;
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
 }
 
 .text-7 {
   font-family: 'Lucida Console', Monaco, monospace;
+
+  color: #0b9c48;
 }
 
 .card-pastel-1 {
