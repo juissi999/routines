@@ -3,6 +3,7 @@
   import { v4 as uuid } from 'uuid'
 
   import Routine from './Routine.svelte'
+  import NewForm from './NewForm.svelte'
 
   const storageKey = 'routines'
   let editMode = false
@@ -56,14 +57,6 @@
   const onRemove = (id) => {
     routines = routines.filter((li) => li.id !== id)
     updated()
-  }
-
-  const onInputClick = (e) => {
-    // listen to keypresses on new input and if the user presses enter
-    // commit Add new routine
-    if (e.key === 'Enter') {
-      onAdd()
-    }
   }
 
   const onUp = (id) => {
@@ -123,22 +116,7 @@
     </div>
   </div>
   {#if editMode}
-    <div class="row my-1">
-      <div class="col-8 col-sm-10 col-md-10 col-lg-10 col-xl-11">
-        <input
-          class="form-control"
-          type="text"
-          placeholder="New"
-          on:keypress={onInputClick}
-          bind:value={editedRoutine} />
-      </div>
-      <div class="col">
-        <button
-          type="button"
-          class="btn btn-success"
-          on:click={onAdd}>add</button>
-      </div>
-    </div>
+    <NewForm bind:editedRoutine {onAdd} />
   {/if}
   <div class="row">
     <div class="col">
