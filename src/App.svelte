@@ -6,9 +6,12 @@
   import NewForm from './NewForm.svelte'
 
   const storageKey = 'routines'
+  const themeStorageKey = 'theme'
   let editMode = false
   let editedRoutine = ''
+  let currentTheme = 0
   let routines = []
+  let cardClasses = []
 
   const themes = {
     pastel: [
@@ -28,7 +31,8 @@
     ]
   }
 
-  let cardClasses = themes.pastel
+  // initialize theme
+  const themeNames = Object.keys(themes)
 
   const updated = () => {
     if (routines.length > 0) {
@@ -37,6 +41,14 @@
       // if user deletes all routines, delete local storage object
       localStorage.removeItem(storageKey)
     }
+    localStorage.setItem(themeStorageKey, JSON.stringify(currentTheme, null, 2))
+  }
+
+  const onTheme = () => {
+    // set theme to next one and
+    currentTheme = (currentTheme + 1) % themeNames.length
+    cardClasses = themes[themeNames[currentTheme]]
+    updated()
   }
 
   const onAdd = () => {
@@ -91,6 +103,7 @@
       )
     }
 
+    // initialize routines
     const initial = [
       { description: 'eat', id: uuid() },
       { description: 'sleep', id: uuid() }
@@ -100,6 +113,19 @@
       localStorage.setItem(storageKey, JSON.stringify(initial, null, 2))
     }
     routines = JSON.parse(localStorage.getItem(storageKey))
+
+    // initialize theme
+    const initialTheme = 0
+
+    if (localStorage.getItem(themeStorageKey) === null) {
+      localStorage.setItem(
+        themeStorageKey,
+        JSON.stringify(initialTheme, null, 2)
+      )
+    }
+    currentTheme =
+      JSON.parse(localStorage.getItem(themeStorageKey)) % themeNames.length
+    cardClasses = themes[themeNames[currentTheme]]
   })
 </script>
 
@@ -117,6 +143,12 @@
           type="button"
           class={editMode ? 'bton edit edit_active' : 'bton edit'}
           on:click={onEdit}>edit</button>
+        {#if editMode}
+          <button
+            type="button"
+            class={'btn btn-primary'}
+            on:click={onTheme}>theme</button>
+        {/if}
       </h1>
     </div>
   </div>
