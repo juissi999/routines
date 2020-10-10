@@ -1,4 +1,5 @@
 <script>
+  import { fade } from 'svelte/transition'
   export let routine
   export let editMode
   export let onRemove
@@ -6,7 +7,7 @@
   export let onUp
 </script>
 
-<div class={'card mb-1 ' + bgClass}>
+<div class={'card mb-1 ' + bgClass} transition:fade>
   <div class="p-2">
     {#if editMode}
       <button
