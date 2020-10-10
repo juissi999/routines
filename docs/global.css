@@ -2,6 +2,10 @@
   background-color: #201c29;
 }
 
+.textwhite {
+  color: white;
+}
+
 .card1 {
   position: relative;
   display: -ms-flexbox;

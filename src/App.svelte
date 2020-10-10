@@ -96,7 +96,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1 class="text-white">
+      <h1 class="textwhite">
         routines
         <button
           type="button"
@@ -122,11 +122,12 @@
   </div>
   {#if editMode}
     <div class="row">
-      <div class="col">
+      <div class="col textwhite">
         <button
           type="button"
           class={'btn btn-primary'}
           on:click={onTheme}>theme</button>
+        {themeNames[currentTheme]}
       </div>
     </div>
   {/if}
