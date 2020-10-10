@@ -5,9 +5,8 @@
   import Routine from './Routine.svelte'
   import NewForm from './NewForm.svelte'
   import themes from './themes.json'
+  import store from './storeService'
 
-  const storageKey = 'routines'
-  const themeStorageKey = 'theme'
   let editMode = false
   let editedRoutine = ''
   let currentTheme = 0
@@ -18,13 +17,7 @@
   const themeNames = Object.keys(themes)
 
   const updated = () => {
-    if (routines.length > 0) {
-      localStorage.setItem(storageKey, JSON.stringify(routines, null, 2))
-    } else {
-      // if user deletes all routines, delete local storage object
-      localStorage.removeItem(storageKey)
-    }
-    localStorage.setItem(themeStorageKey, JSON.stringify(currentTheme, null, 2))
+    store.update(routines, currentTheme)
   }
 
   const onTheme = () => {
@@ -77,6 +70,7 @@
   }
 
   onMount(() => {
+    // register service workers
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () =>
         navigator.serviceWorker
@@ -86,28 +80,10 @@
       )
     }
 
-    // initialize routines
-    const initial = [
-      { description: 'eat', id: uuid() },
-      { description: 'sleep', id: uuid() }
-    ]
-
-    if (localStorage.getItem(storageKey) === null) {
-      localStorage.setItem(storageKey, JSON.stringify(initial, null, 2))
-    }
-    routines = JSON.parse(localStorage.getItem(storageKey))
-
-    // initialize theme
-    const initialTheme = 0
-
-    if (localStorage.getItem(themeStorageKey) === null) {
-      localStorage.setItem(
-        themeStorageKey,
-        JSON.stringify(initialTheme, null, 2)
-      )
-    }
-    currentTheme =
-      JSON.parse(localStorage.getItem(themeStorageKey)) % themeNames.length
+    // initialize store
+    const response = store.init()
+    routines = response.routines
+    currentTheme = response.theme % themeNames.length
     cardClasses = themes[themeNames[currentTheme]]
   })
 </script>
