@@ -10,14 +10,25 @@
   let editedRoutine = ''
   let routines = []
 
-  const cardClasses = [
-    'card-pastel-1',
-    'card-pastel-2',
-    'card-pastel-3',
-    'card-pastel-4',
-    'card-pastel-5',
-    'card-pastel-6'
-  ]
+  const themes = {
+    pastel: [
+      'card-pastel-1',
+      'card-pastel-2',
+      'card-pastel-3',
+      'card-pastel-4',
+      'card-pastel-5',
+      'card-pastel-6'
+    ],
+    neon: [
+      'card-neon-1',
+      'card-neon-2',
+      'card-neon-3',
+      'card-neon-4',
+      'card-neon-5'
+    ]
+  }
+
+  let cardClasses = themes.pastel
 
   const updated = () => {
     if (routines.length > 0) {
