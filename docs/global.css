@@ -2,6 +2,20 @@
   background-color: #201c29;
 }
 
+.card1 {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
 .right {
   float: right;
 }
@@ -35,26 +49,72 @@
   font-family: 'Lucida Console', Monaco, monospace;
 }
 
-.bg-1 {
-  background-color: #9b92be !important;
+.card-pastel-1 {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  background-color: #9b92be;
   color: white;
 }
-.bg-2 {
-  background-color: #9cdd77 !important;
+.card-pastel-2 {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  background-color: #9cdd77;
 }
-.bg-3 {
-  background-color: #97baeb !important;
+.card-pastel-3 {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  background-color: #97baeb;
 }
-.bg-4 {
-  background-color: #fc6868 !important;
+.card-pastel-4 {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  background-color: #fc6868;
   color: white;
 }
-.bg-5 {
-  background-color: #eee9a0 !important;
+.card-pastel-5 {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  background-color: #eee9a0;
 }
-.bg-6 {
-  background-color: #0b9c48 !important;
+.card-pastel-6 {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  background-color: #0b9c48;
   color: white;
+}
+
+.card-neon-1 {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  font-family: Trebuchet MS;
+  background-color: #00aaff;
+  color: white;
+}
+.card-neon-2 {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  font-family: Trebuchet MS;
+  background-color: #aa00ff;
+  color: white;
+}
+.card-neon-3 {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  font-family: Trebuchet MS;
+  background-color: #ff00aa;
+  color: white;
+}
+.card-neon-4 {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  font-family: Trebuchet MS;
+  background-color: #ffaa00;
+}
+.card-neon-5 {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  font-family: Trebuchet MS;
+  background-color: #aaff00;
 }
 
 .bton {

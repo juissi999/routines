@@ -3,11 +3,11 @@
   export let routine
   export let editMode
   export let onRemove
-  export let bgClass
+  export let cardClass
   export let onUp
 </script>
 
-<div class={'card mb-1 ' + bgClass} transition:fade>
+<div class={'mb-1 ' + cardClass} transition:fade>
   <div class="p-2">
     {#if editMode}
       <button

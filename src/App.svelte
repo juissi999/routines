@@ -10,19 +10,13 @@
   let editedRoutine = ''
   let routines = []
 
-  const bgClasses = [
-    // 'bg-info',
-    // 'bg-dark',
-    // 'bg-success',
-    // 'bg-primary',
-    // 'bg-secondary',
-    // 'bg-warning',
-    'bg-1',
-    'bg-2',
-    'bg-3',
-    'bg-4',
-    'bg-5',
-    'bg-6'
+  const cardClasses = [
+    'card-pastel-1',
+    'card-pastel-2',
+    'card-pastel-3',
+    'card-pastel-4',
+    'card-pastel-5',
+    'card-pastel-6'
   ]
 
   const updated = () => {
@@ -126,7 +120,7 @@
           {routine}
           {onRemove}
           {onUp}
-          bgClass={bgClasses[index % bgClasses.length]} />
+          cardClass={cardClasses[index % cardClasses.length]} />
       {/each}
     </div>
   </div>
