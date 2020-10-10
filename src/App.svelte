@@ -126,12 +126,6 @@
           type="button"
           class={editMode ? 'bton edit edit_active' : 'bton edit'}
           on:click={onEdit}>edit</button>
-        {#if editMode}
-          <button
-            type="button"
-            class={'btn btn-primary'}
-            on:click={onTheme}>theme</button>
-        {/if}
       </h1>
     </div>
   </div>
@@ -150,4 +144,14 @@
       {/each}
     </div>
   </div>
+  {#if editMode}
+    <div class="row">
+      <div class="col">
+        <button
+          type="button"
+          class={'btn btn-primary'}
+          on:click={onTheme}>theme</button>
+      </div>
+    </div>
+  {/if}
 </div>
