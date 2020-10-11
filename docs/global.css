@@ -24,44 +24,6 @@
   float: right;
 }
 
-.text-1 {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
-  font-size: 23px;
-  color: #fff403;
-}
-
-.text-2 {
-  font-family: 'Arial Black', Gadget, sans-serif;
-  color: #aa00ff;
-}
-
-.text-3 {
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  color: #ffaa00;
-}
-
-.text-4 {
-  font-family: Impact, Charcoal, sans-serif;
-  color: #ff00aa;
-}
-
-.text-5 {
-  font-family: 'Courier New', Courier, monospace;
-  color: #aaff00;
-}
-
-.text-6 {
-  font-family: 'Times New Roman', Times, serif;
-  color: white;
-}
-
-.text-7 {
-  font-family: 'Lucida Console', Monaco, monospace;
-
-  color: #0b9c48;
-}
-
 .card-pastel-1 {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -101,33 +63,35 @@
   border-radius: 0.25rem;
   font-family: Trebuchet MS;
   background-color: #00aaff;
-  color: white;
+  color: #2b00ff;
 }
 .card-neon-2 {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   font-family: Trebuchet MS;
   background-color: #aa00ff;
-  color: white;
+  color: #ffd500;
 }
 .card-neon-3 {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   font-family: Trebuchet MS;
   background-color: #ff00aa;
-  color: white;
+  color: #aaff00;
 }
 .card-neon-4 {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   font-family: Trebuchet MS;
   background-color: #ffaa00;
+  color: #5500ff;
 }
 .card-neon-5 {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   font-family: Trebuchet MS;
   background-color: #aaff00;
+  color: #ff2b00;
 }
 
 .bton {
