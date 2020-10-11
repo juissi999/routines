@@ -7,6 +7,10 @@
   color: white;
 }
 
+.textdark {
+  color: #201c29;
+}
+
 .card1 {
   position: relative;
   display: -ms-flexbox;
@@ -23,6 +27,15 @@
 
 .right {
   float: right;
+}
+
+.block {
+  display: inline-block;
+}
+
+.icon {
+  color: white;
+  text-shadow: 0px 0px 20px #ff0000;
 }
 
 .bton {
