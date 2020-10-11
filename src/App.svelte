@@ -23,9 +23,9 @@
   }
 
   const onTheme = () => {
-    // set theme to next one and
+    // set theme to next one and update
     currentTheme = (currentTheme + 1) % themeNames.length
-    cardClasses = themes[themeNames[currentTheme]]
+    setThemeClasses()
     updated()
   }
 
@@ -71,6 +71,11 @@
     }
   }
 
+  const setThemeClasses = () => {
+    cardClasses = themes[themeNames[currentTheme]].cards
+    document.body.className = themes[themeNames[currentTheme]].app
+  }
+
   onMount(() => {
     // register service workers
     if ('serviceWorker' in navigator) {
@@ -86,15 +91,18 @@
     const response = store.init()
     routines = response.routines
     currentTheme = response.theme % themeNames.length
-    cardClasses = themes[themeNames[currentTheme]]
+    setThemeClasses()
   })
 </script>
+
+<!-- body{themes[themeNames[currentTheme]].app} -->
 
 <svelte:head>
   <link
     rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 </svelte:head>
+
 <div class="container">
   <div class="row">
     <div class="col">
