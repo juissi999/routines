@@ -1,6 +1,6 @@
 <script>
   export let onAdd
-  export let editedRoutine
+  export let newRoutine
 
   const onInputClick = (e) => {
     // listen to keypresses on new input and if the user presses enter
@@ -18,7 +18,7 @@
       type="text"
       placeholder="New"
       on:keypress={onInputClick}
-      bind:value={editedRoutine} />
+      bind:value={newRoutine} />
   </div>
   <div class="col">
     <button type="button" class="bton blue_active" on:click={onAdd}>add</button>

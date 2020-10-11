@@ -10,7 +10,7 @@
   import store from './storeService'
 
   let editMode = false
-  let editedRoutine = ''
+  let newRoutine = ''
   let currentTheme = 0
   let routines = []
   let cardClasses = []
@@ -31,21 +31,21 @@
 
   const onAdd = () => {
     // add new routine to the beginning of the list
-    if (editedRoutine.length > 0) {
+    if (newRoutine.length > 0) {
       routines = [
         {
-          description: editedRoutine,
+          description: newRoutine,
           id: uuid()
         }
       ].concat(routines)
-      editedRoutine = ''
+      newRoutine = ''
       editMode = false
     }
     updated()
   }
 
   const onEdit = () => {
-    editedRoutine = ''
+    newRoutine = ''
     editMode = !editMode
   }
 
@@ -109,7 +109,7 @@
     </div>
   </div>
   {#if editMode}
-    <NewForm bind:editedRoutine {onAdd} />
+    <NewForm bind:newRoutine {onAdd} />
   {/if}
   <div class="row">
     <div class="col">
