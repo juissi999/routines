@@ -32,11 +32,15 @@ const store = {
   update: (routines, currentTheme) => {
     if (routines.length > 0) {
       localStorage.setItem(storageKey, JSON.stringify(routines, null, 2))
+      localStorage.setItem(
+        themeStorageKey,
+        JSON.stringify(currentTheme, null, 2)
+      )
     } else {
       // if user deletes all routines, delete local storage object
       localStorage.removeItem(storageKey)
+      localStorage.removeItem(themeStorageKey)
     }
-    localStorage.setItem(themeStorageKey, JSON.stringify(currentTheme, null, 2))
   }
 }
 
