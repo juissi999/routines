@@ -13,13 +13,13 @@
 <div class={'mb-1 ' + cardClass} transition:fade>
   <div class="p-2">
     {#if editMode}
-      <div class="block textdark" on:click={onUp(routine.id)}>
+      <div class="pointer block textdark" on:click={onUp(routine.id)}>
         <Icon data={arrowUp} />
       </div>
     {/if}
     {routine.description}
     {#if editMode}
-      <div class="right textdark" on:click={onRemove(routine.id)}>
+      <div class="pointer right textdark" on:click={onRemove(routine.id)}>
         <Icon data={times} />
       </div>
     {/if}

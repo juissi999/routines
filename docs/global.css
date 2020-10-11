@@ -38,6 +38,10 @@
   text-shadow: 0px 0px 20px #ff0000;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .bton {
   font-size: 1rem;
   font-weight: 400;
