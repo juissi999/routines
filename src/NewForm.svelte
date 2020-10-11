@@ -21,6 +21,6 @@
       bind:value={editedRoutine} />
   </div>
   <div class="col">
-    <button type="button" class="btn btn-success" on:click={onAdd}>add</button>
+    <button type="button" class="bton blue_active" on:click={onAdd}>add</button>
   </div>
 </div>

@@ -100,7 +100,7 @@
         routines
         <button
           type="button"
-          class={editMode ? 'bton edit edit_active' : 'bton edit'}
+          class={editMode ? 'bton yellow_active' : 'bton yellow'}
           on:click={onEdit}>edit</button>
       </h1>
     </div>
@@ -125,7 +125,7 @@
       <div class="col textwhite">
         <button
           type="button"
-          class={'btn btn-primary'}
+          class={'bton blue_active'}
           on:click={onTheme}>theme</button>
         {themeNames[currentTheme]}
       </div>

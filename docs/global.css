@@ -1,5 +1,6 @@
 .bg-dark {
   background-color: #201c29;
+  /* 343a40 */
 }
 
 .textwhite {
@@ -22,6 +23,46 @@
 
 .right {
   float: right;
+}
+
+.bton {
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.5;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.bton:focus {
+  outline: 0;
+  /* box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5); */
+  box-shadow: 0 0 0 0;
+}
+
+.yellow {
+  background-color: transparent;
+  color: #ffc107;
+  border: 1px solid #ffc107;
+}
+.yellow_active {
+  background-color: #ffc107;
+  color: #212529;
+  border: 1px solid #ffc107;
+}
+
+.blue {
+  background-color: transparent;
+  color: #316c94;
+  border: 1px solid #316c94;
+}
+.blue_active {
+  background-color: #316c94;
+  color: white;
+  border: 1px solid #316c94;
 }
 
 .card-pastel-1 {
@@ -97,31 +138,4 @@
   font-size: 1.25rem;
   background-color: #aaff00;
   color: #ff2b00;
-}
-
-.bton {
-  font-size: 1rem;
-  font-weight: 400;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 1.5;
-  padding: 0.375rem 0.75rem;
-  border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.edit {
-  background-color: transparent;
-  color: #ffc107;
-  border: 1px solid #ffc107;
-}
-.edit_active {
-  background-color: #ffc107;
-  color: #212529;
-}
-.edit:focus {
-  outline: 0;
-  /* box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5); */
-  box-shadow: 0 0 0 0;
 }
