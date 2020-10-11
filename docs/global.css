@@ -61,35 +61,40 @@
 .card-neon-1 {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
-  font-family: Trebuchet MS;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
   background-color: #00aaff;
   color: #2b00ff;
 }
 .card-neon-2 {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
-  font-family: Trebuchet MS;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
   background-color: #aa00ff;
   color: #ffd500;
 }
 .card-neon-3 {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
-  font-family: Trebuchet MS;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
   background-color: #ff00aa;
   color: #aaff00;
 }
 .card-neon-4 {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
-  font-family: Trebuchet MS;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
   background-color: #ffaa00;
   color: #5500ff;
 }
 .card-neon-5 {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
-  font-family: Trebuchet MS;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
   background-color: #aaff00;
   color: #ff2b00;
 }
