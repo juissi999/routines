@@ -15,6 +15,7 @@ html {
     #06ac38 105%,
     white 290%
   );
+  background-attachment: fixed;
 }
 /* #018027 */
 
