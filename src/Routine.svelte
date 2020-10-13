@@ -11,6 +11,7 @@
   export let onUp
   export let updated
 
+  const iconScale = '1.5'
   let editedRoutine = ''
 
   const updateEditRoutine = (id) => {
@@ -35,12 +36,12 @@
   <div class="p-2">
     {#if editMode}
       <div class="pointer block textdark" on:click={onUp(routine.id)}>
-        <Icon data={arrowUp} />
+        <Icon data={arrowUp} scale={iconScale} />
       </div>
       <div
         class="pointer block textdark"
         on:click={updateEditRoutine(routine.id)}>
-        <Icon data={pencil} />
+        <Icon data={pencil} scale={iconScale} />
       </div>
     {/if}
     {#if !(editRoutineId === routine.id)}
@@ -59,7 +60,7 @@
     {/if}
     {#if editMode}
       <div class="pointer right textdark" on:click={onRemove(routine.id)}>
-        <Icon data={times} />
+        <Icon data={times} scale={iconScale} />
       </div>
     {/if}
   </div>
