@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
   import { v4 as uuid } from 'uuid'
   import Icon from 'svelte-awesome/components/Icon.svelte'
-  import { lock } from 'svelte-awesome/icons'
+  import { lock, unlock } from 'svelte-awesome/icons'
 
   import Routine from './Routine.svelte'
   import NewForm from './NewForm.svelte'
@@ -118,7 +118,7 @@
           type="button"
           class={editMode ? 'bton yellow' : 'bton yellow_active'}
           on:click={onEdit}>
-          <Icon data={lock} /></button>
+          <Icon data={editMode ? unlock : lock} /></button>
       </h1>
     </div>
   </div>
