@@ -10,6 +10,7 @@
   import store from './storeService'
 
   let editMode = false
+  let editRoutineId = ''
   let newRoutine = ''
   let currentTheme = 0
   let routines = []
@@ -41,11 +42,16 @@
       newRoutine = ''
       editMode = false
     }
+
+    // if user was accidentally editing something at the same time
+    editRoutineId = ''
+
     updated()
   }
 
   const onEdit = () => {
     newRoutine = ''
+    editRoutineId = ''
     editMode = !editMode
   }
 
@@ -127,6 +133,8 @@
           {routine}
           {onRemove}
           {onUp}
+          {updated}
+          bind:editRoutineId
           cardClass={cardClasses[index % cardClasses.length]} />
       {/each}
     </div>
