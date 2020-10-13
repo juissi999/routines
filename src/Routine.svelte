@@ -40,7 +40,7 @@
       </div>
       <div
         class="pointer block textdark"
-        on:click={updateEditRoutine(routine.id)}>
+        on:click={editRoutineId === routine.id ? updateEditRoutine('') : updateEditRoutine(routine.id)}>
         <Icon data={pencil} scale={iconScale} />
       </div>
     {/if}
