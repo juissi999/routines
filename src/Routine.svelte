@@ -32,35 +32,54 @@
   }
 </script>
 
-<div class={'mb-1 ' + cardClass} transition:fade>
+<style>
+  .right-corner {
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+  }
+  .on-left-of-right-corner {
+    margin-right: 22px;
+  }
+  .relative {
+    position: relative;
+  }
+</style>
+
+<div class={'mb-1 relative ' + cardClass} transition:fade>
   <div class="p-2">
+    <div class={editMode ? 'on-left-of-right-corner' : ''}>
+      {#if editMode}
+        <div class="pointer block textdark" on:click={onUp(routine.id)}>
+          <Icon data={arrowUp} scale={iconScale} />
+        </div>
+        <div
+          class="pointer block textdark"
+          on:click={editRoutineId === routine.id ? updateEditRoutine('') : updateEditRoutine(routine.id)}>
+          <Icon data={pencil} scale={iconScale} />
+        </div>
+      {/if}
+      {#if !(editRoutineId === routine.id)}
+        {routine.description}
+      {:else}
+        <input
+          class="form-control my-1"
+          type="text"
+          placeholder="New"
+          on:keypress={onInputClick}
+          bind:value={editedRoutine} />
+        <button
+          type="button"
+          class="bton blue_active"
+          on:click={onEditReady}>rdy</button>
+      {/if}
+    </div>
     {#if editMode}
-      <div class="pointer block textdark" on:click={onUp(routine.id)}>
-        <Icon data={arrowUp} scale={iconScale} />
-      </div>
       <div
-        class="pointer block textdark"
-        on:click={editRoutineId === routine.id ? updateEditRoutine('') : updateEditRoutine(routine.id)}>
-        <Icon data={pencil} scale={iconScale} />
-      </div>
-    {/if}
-    {#if !(editRoutineId === routine.id)}
-      {routine.description}
-    {:else}
-      <input
-        class="form-control"
-        type="text"
-        placeholder="New"
-        on:keypress={onInputClick}
-        bind:value={editedRoutine} />
-      <button
-        type="button"
-        class="bton blue_active"
-        on:click={onEditReady}>rdy</button>
-    {/if}
-    {#if editMode}
-      <div class="pointer right textdark" on:click={onRemove(routine.id)}>
-        <Icon data={times} scale={iconScale} />
+        class="pointer textdark right-corner"
+        on:click={onRemove(routine.id)}>
+        ✕
       </div>
     {/if}
   </div>
