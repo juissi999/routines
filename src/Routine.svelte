@@ -2,6 +2,7 @@
   import { fade } from 'svelte/transition'
   import Icon from 'svelte-awesome/components/Icon.svelte'
   import { times, arrowUp, pencil } from 'svelte-awesome/icons'
+  import EditForm from './EditForm.svelte'
 
   export let routine
   export let editMode
@@ -12,23 +13,9 @@
   export let updated
 
   const iconScale = '1.5'
-  let editedRoutine = ''
 
   const updateEditRoutine = (id) => {
     editRoutineId = id
-    editedRoutine = routine.description
-  }
-
-  const onInputClick = (e) => {
-    if (e.key === 'Enter') {
-      onEditReady()
-    }
-  }
-
-  const onEditReady = () => {
-    routine.description = editedRoutine
-    editRoutineId = ''
-    updated()
   }
 </script>
 
@@ -63,16 +50,7 @@
       {#if !(editRoutineId === routine.id)}
         {routine.description}
       {:else}
-        <input
-          class="form-control my-1"
-          type="text"
-          placeholder="New"
-          on:keypress={onInputClick}
-          bind:value={editedRoutine} />
-        <button
-          type="button"
-          class="bton blue_active"
-          on:click={onEditReady}>rdy</button>
+        <EditForm {updated} {routine} bind:editRoutineId />
       {/if}
     </div>
     {#if editMode}
