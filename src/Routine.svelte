@@ -11,10 +11,12 @@
   export let editRoutineId
   export let onUp
   export let updated
+  export let resetEditModeTimeout
 
   const iconScale = '1.5'
 
   const updateEditRoutine = (id) => {
+    resetEditModeTimeout()
     editRoutineId = id
   }
 </script>
@@ -50,7 +52,11 @@
       {#if !(editRoutineId === routine.id)}
         {routine.description}
       {:else}
-        <EditForm {updated} {routine} bind:editRoutineId />
+        <EditForm
+          {updated}
+          {routine}
+          {resetEditModeTimeout}
+          bind:editRoutineId />
       {/if}
     </div>
     {#if editMode}

@@ -1,10 +1,14 @@
 <script>
   export let onAdd
   export let newRoutine
+  export let resetEditModeTimeout
 
   const onInputClick = (e) => {
-    // listen to keypresses on new input and if the user presses enter
-    // commit Add new routine
+    // listen to keypresses on new input
+    // renew timeout on every keypress
+    resetEditModeTimeout()
+
+    // if the user presses enter commit Add new routine
     if (e.key === 'Enter') {
       onAdd()
     }

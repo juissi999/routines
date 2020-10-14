@@ -3,11 +3,15 @@
   export let routine
   export let updated
   export let editRoutineId
+  export let resetEditModeTimeout
 
   let dom_node
   let editedRoutine = ''
 
   const onInputClick = (e) => {
+    // reset timeout
+    resetEditModeTimeout()
+
     if (e.key === 'Enter') {
       onEditReady()
     }
@@ -21,8 +25,8 @@
     }
   }
   onMount(() => {
-    editedRoutine = routine.description
     dom_node.focus()
+    editedRoutine = routine.description
   })
 </script>
 

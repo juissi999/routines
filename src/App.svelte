@@ -13,6 +13,7 @@
   let editRoutineId = ''
   let newRoutine = ''
   let currentTheme = 0
+  const timeoutTime = 30000
   let routines = []
   let cardClasses = []
 
@@ -23,9 +24,24 @@
     store.update(routines, currentTheme)
   }
 
+  const resetInputs = () => {
+    newRoutine = ''
+    editRoutineId = ''
+  }
+
+  let timeoutHandle = undefined
+  const resetEditModeTimeout = () => {
+    clearTimeout(timeoutHandle)
+    timeoutHandle = setTimeout(() => {
+      editMode = false
+      resetInputs()
+    }, timeoutTime)
+  }
+
   const onTheme = () => {
     // set theme to next one and update
     currentTheme = (currentTheme + 1) % themeNames.length
+    resetEditModeTimeout()
     setThemeClasses()
     updated()
   }
@@ -44,23 +60,34 @@
     }
 
     // if user was accidentally editing something at the same time
-    editRoutineId = ''
-
+    resetInputs()
     updated()
   }
 
   const onEdit = () => {
-    newRoutine = ''
-    editRoutineId = ''
+    resetInputs()
     editMode = !editMode
+
+    // set timeoutter function to automatically disable edit mode if idle
+    if (editMode) {
+      resetEditModeTimeout()
+    }
   }
 
   const onRemove = (id) => {
+    // reset timeout
+    resetEditModeTimeout()
+
+    // remove routine
     routines = routines.filter((li) => li.id !== id)
     updated()
   }
 
   const onUp = (id) => {
+    // reset timeout
+    resetEditModeTimeout()
+
+    // shift routines to a lower index in array
     // find the index of the routine to be shifted
     const index = routines.findIndex((r) => r.id === id)
 
@@ -123,7 +150,7 @@
     </div>
   </div>
   {#if editMode}
-    <NewForm bind:newRoutine {onAdd} />
+    <NewForm bind:newRoutine {onAdd} {resetEditModeTimeout} />
   {/if}
   <div class="row">
     <div class="col">
@@ -134,6 +161,7 @@
           {onRemove}
           {onUp}
           {updated}
+          {resetEditModeTimeout}
           bind:editRoutineId
           cardClass={cardClasses[index % cardClasses.length]} />
       {/each}
